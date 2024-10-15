@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        sw4 = &button4; // Ensure sw4 is an alias for your button node
+    };
+
+    buttons {
+        button4: button_4 {
+            gpios = <&gpio0 27 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>; // The external button sensor is ACTIVE_HIGH.
+            label = "Push button switch 4";
+            zephyr,code = <INPUT_KEY_4>;
+        };
+    };
+};
